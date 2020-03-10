@@ -1,7 +1,6 @@
 envPrefix = "POC-BlueGreen-Lambda"
 azs = "us-east-1a,us-east-1b"
-awsRegion = "us-west-2"
-ProjectTag = "us-west-2a,us-west-2b"
+awsRegion = "us-east-1"
 cidr = "10.8.0.0/24"
 lb_subnet_a_cidr = "10.8.0.96/28"
 lb_subnet_b_cidr = "10.8.0.16/28"

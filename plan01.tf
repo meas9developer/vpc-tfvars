@@ -1,7 +1,7 @@
 provider "aws" {
   profile = "default"
   #region  = "us-west-2"
-  region = var.awsRegion
+  #region = var.awsRegion
   shared_credentials_file = "/home/ec2-user/.aws/credentials"
 }
 
