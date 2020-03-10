@@ -37,6 +37,8 @@ resource "aws_vpc" "this" {
 resource "aws_internet_gateway" "iGateway" {
   vpc_id = aws_vpc.this.id
 
+  depends_on = [aws_vpc.this]
+
   tags = merge(
     {
       "Name" = format("%s", var.envPrefix)
@@ -163,6 +165,9 @@ resource "aws_db_subnet_group" "database" {
 
 resource "aws_route_table" "public" {
   vpc_id = "${aws_vpc.this.id}"
+
+  depends_on = [aws_vpc.this]
+
   tags = merge({
     "Name" = format("%s-RTB-Public", var.envPrefix)
   })
@@ -174,6 +179,8 @@ resource "aws_route" "public_internet_gateway" {
   route_table_id         = aws_route_table.public.id
   destination_cidr_block = "0.0.0.0/0"
   gateway_id             = aws_internet_gateway.iGateway.id
+
+  depends_on = [aws_vpc.this, aws_route_table.public]
 
 }
 
