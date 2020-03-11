@@ -8,21 +8,21 @@ variable "azs" {
 }
 
 
-variable "defaultTags" {
-  type = "map"
-
-  default = {
-    Name = "var.billing"
-    Owner = "var.project"
-  }
-}
-
 variable "billing" {
   default     = "DXinfra-billing"
 }
 
 variable "project" {
   default     = "DXinfra"
+}
+
+variable "defaultTags" {
+  type = "map"
+
+  default = {
+    Name = var.billing
+    Owner = var.project
+  }
 }
 
 variable "awsRegion" {
