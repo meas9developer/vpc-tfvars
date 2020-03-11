@@ -12,11 +12,18 @@ variable "defaultTags" {
   type = "map"
 
   default = {
-    Name = "myname-1234"
-    Owner = "meOwner-4567"
+    Name = ""$${var.billing}""
+    Owner = ""$${var.project}""
   }
 }
 
+variable "billing" {
+  default     = "DXinfra-billing"
+}
+
+variable "project" {
+  default     = "DXinfra"
+}
 
 variable "awsRegion" {
   description = "region"
