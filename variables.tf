@@ -12,8 +12,8 @@ variable "defaultTags" {
   type = "map"
 
   default = {
-    Name = ""$${var.billing}""
-    Owner = ""$${var.project}""
+    Name = "$${var.billing}"
+    Owner = "$${var.project}"
   }
 }
 
