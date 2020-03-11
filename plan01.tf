@@ -29,7 +29,7 @@ resource "aws_vpc" "this" {
     {
       "Name" = format("%s", var.envPrefix)
     },
-    # var.tags,
+    var.defaultTags,
     # var.vpc_tags,
   )
 }
@@ -43,6 +43,7 @@ resource "aws_internet_gateway" "iGateway" {
     {
       "Name" = format("%s", var.envPrefix)
     },
+    var.defaultTags,
     #var.tags,
     #var.igw_tags,
   )
@@ -59,6 +60,7 @@ resource "aws_subnet" "lb_subnet_a" {
     {
       "Name" = format("%s-lb_subnet_a", var.envPrefix)
     },
+    var.defaultTags,
     #var.tags,
     # var.public_subnet_tags,
   )

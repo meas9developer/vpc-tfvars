@@ -7,6 +7,17 @@ variable "azs" {
   default     = "us-west-2a,us-west-2b"
 }
 
+
+variable "defaultTags" {
+  type = "map"
+
+  default = {
+    Name = "myname-1234"
+    Owner = "meOwner-4567"
+  }
+}
+
+
 variable "awsRegion" {
   description = "region"
   default     = "us-west-2"
